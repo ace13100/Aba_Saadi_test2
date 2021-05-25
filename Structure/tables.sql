@@ -22,11 +22,11 @@ CREATE TABLE auteur
 DROP TABLE IF EXISTS oeuvre;
 CREATE TABLE oeuvre
 (
-	idOeu INT UNSIGNED NOT NULL auto_increment,
+    idOeu INT UNSIGNED NOT NULL auto_increment,
     libOeu VARCHAR(128) NOT NULL,
     idAut INT UNSIGNED NOT NULL,
     PRIMARY KEY (idOeu),
-    CONSTRAINT fk_titrea FOREIGN KEY (idAut) REFERENCES auteur(idAut)
+    CONSTRAINT fk_oeuvre_auteur FOREIGN KEY (idAut) REFERENCES auteur(idAut)
    
     
 ) ENGINE = InnoDB;
@@ -37,10 +37,10 @@ CREATE TABLE oeuvre_genre
 	idGre INT UNSIGNED NOT NULL , 
     idOeu INT UNSIGNED NOT NULL,
     UNIQUE (idGre, idOeu),
-    CONSTRAINT fk_genretOEu
+    CONSTRAINT fk_oeuvre_genre_genre
     FOREIGN KEY (idGre)
     REFERENCES genre(idGre),
-    CONSTRAINT fk_auteurOe
+    CONSTRAINT fk_oeuvre_genre_oeuvre
     FOREIGN KEY (idOeu)
     REFERENCES oeuvre(idOeu)
 ) ENGINE = InnoDB;
