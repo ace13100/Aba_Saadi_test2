@@ -1,0 +1,8 @@
+DELIMITER //
+DROP PROCEDURE IF EXISTS Sp_GenreLire//
+CREATE PROCEDURE Sp_GenreLire(greId INT) 
+BEGIN
+	SELECT libGre
+    FROM genre
+    WHERE idGre = greId;
+END//
