@@ -19,11 +19,7 @@ BEGIN
 
     IF(message = '') THEN
 	
-		DELETE 
-		FROM titre_auteur
-		WHERE idAut = autId;
-
-		DELETE 
+		DELETE
 		FROM auteur
 		WHERE idAut = autId;
 
