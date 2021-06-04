@@ -19,9 +19,13 @@ BEGIN
 
     IF(message = '') THEN
 	
-		DELETE
+		DELETE oeu
+		FROM oeuvre oeu inner join auteur aut on oeu.idAut = aut.idAut
+		WHERE idAut = autID ;
+
+		DELETE 
 		FROM auteur
-		WHERE idAut = autId;
+		WHERE idAut = autID ;
 
 	END IF;
 	

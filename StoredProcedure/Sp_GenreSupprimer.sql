@@ -19,13 +19,16 @@ BEGIN
 
     IF(message = '') THEN
 	
-		UPDATE titre
-		SET    idGre = NULL
-		WHERE  idGre = greId;
+		UPDATE oeuvre
+		SET    idOeu   = NULL
+		WHERE  idOeu   = greId;
 
+		DELETE oeug
+		FROM oeuvre_genre oeug inner join genre gre on gre.idGre = oeug.idGre
+		WHERE idGre = greId ;
 		DELETE 
-		FROM   genre
-        WHERE  idGre = greId;
+		FROM genre
+		WHERE idGre = greId ;
 
 	END IF;
 	
