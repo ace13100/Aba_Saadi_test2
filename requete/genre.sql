@@ -8,12 +8,12 @@ WHERE idGre = 'genre';
 SELECT * 
 FROM genre;
 -- delete avec les FK
-DELETE oeug
-FROM oeuvre_genre oeug inner join genre gre on gre.idGre = oeug.idGre
-WHERE libGre ='genre' ;
+DELETE 
+FROM oeuvre_genre  
+WHERE idGre = greId ;
 DELETE 
 FROM genre
-WHERE libGre ='genre' ;
+WHERE idGre = greId ;
 
 SELECT * 
 FROM genre;

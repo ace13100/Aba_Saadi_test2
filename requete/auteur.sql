@@ -11,13 +11,12 @@ FROM auteur;
 
 
 -- delete avec les FK
-DELETE oeu
-FROM oeuvre oeu inner join auteur aut on oeu.idAut = aut.idAut
-WHERE nomAut = 'ggggggg' ;
-
+UPDATE oeuvre
+SET    idAut = NULL
+WHERE  idAut = autID;
 DELETE 
 FROM auteur
-WHERE nomAut = 'ggggggg' ;
+WHERE idAut = autID;
 
 SELECT * 
 FROM auteur;
