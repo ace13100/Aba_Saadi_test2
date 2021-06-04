@@ -34,7 +34,7 @@ BEGIN
 	END IF;
 
     IF(message = '') THEN
-	    INSERT INTO titre (libOeu, idGre)
+	    INSERT INTO oeuvre (libOeu, idGre)
         VALUES (OeuLib, greId);
 	
         SELECT LAST_INSERT_ID()
